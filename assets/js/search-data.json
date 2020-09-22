@@ -22,17 +22,6 @@
         
     
   
-    
-        ,"post2": {
-            "title": "Title",
-            "content": "Why write df[intercept]= 1 in linear regression model of python? . Linear regression is basic type of predictive analysis. In a linear regression model we are trying to find the best fitted line for a scatter plot and for simple linear regression the line is represented as . $$ hat{y}= b1x+b0 $$ . where, b1 is the slope and b0 is the intercept . . Let&#39;s take an example where we want to predict the price of a house on the basis of how many bedrooms it has. Then the variable we want to predict, which is price, is represented by y and x is the no.of bedrooms in the house. In this context, the change in price, when one more bedrrom is added to the house, will be represented by value b1. Our intercept b0, is the value of the house when it has no bedrooms at all (you can crash in the bathtub). Now that we have our interpretations down, lets dive into some code. . To find value of the parameters b1 and b0 of the best fitted line, we write a simple three line code in python. . df[&#39;intercept&#39;] = 1 # df is dataframe containing our data #performing linear regression lm = sm.OLS(df[&#39;Price&#39;], df[[&#39;intercept&#39;,&#39;bedrooms&#39;]]) results = lm.fit() results.summary() . Note here that we added a column &#39;intercept&#39; to our data, before performing linear regression and set its value to 1, which might cause some confusion as to why we have to write this exact same line of code everytime, before performing linear regression? What if I skip this line of code? What if intercept is set to a value other than 1? . Explanation: . In the linear regression model, OLS finds &quot;weight * predictor&quot; for each term used in the regression. This means that if we skip intercept variable, which looks like this: . lm = sm.OLS(df[&#39;price&#39;],df[&#39;bedrooms&#39;]) . Then, OLS will see the equation as: . $$y = b1*x$$ . OLS algorithm will now proceed to find b1 and leave out b0 because there is only one predictor x given to it for which it will calculate the weight b1. This way, without the intercept, the line is forced to always pass by the origin (0, 0) and we never get the predictive relationship we are seeking between price and the no.of bedrooms, as per the fitted model. So, it is often quoted that,initializing the intercept should never be skipped, unless there is gaurantee that the linear approximation of the linear regression model either by some theoretical or any other reasons is forced to go through the origin. . Since we are now clear we want value of intercept b0 , we add a column for it in our database. Now, OLS sees that we want value of weight = b0 but then we also have to have a predictor for equation to be complete. Since we want the value of intercept unaltered, we simply multiply it by 1, that is, weight (= b0) * predictor( = 1) and it suffices our need. So, we give OLS, the equation: . $$y = b1*x + b0*1$$ . Now, our linear regression model knows it has to find the value of both b1 and b0. . Note: In R language, intercept is included anyway without initialization. .",
-            "url": "https://sidraeffendi.github.io/Why-write-df-intercept-1/2020/09/20/Why-write-df-intercept-1.html",
-            "relUrl": "/2020/09/20/Why-write-df-intercept-1.html",
-            "date": " • Sep 20, 2020"
-        }
-        
-    
-  
 
   
   
