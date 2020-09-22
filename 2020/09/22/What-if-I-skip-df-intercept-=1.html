@@ -161,7 +161,7 @@ $$ \hat{y}= b1x+b0 $$
 <div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># df is dataframe containing our data</span>
 
 <span class="c1">#performing linear regression</span>
-<span class="n">linear_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]])</span>  <span class="c1"># y:price, x:[intercept,bedrooms]</span>
+<span class="n">linear_model</span><span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]])</span> <span class="c1">#y:price, x:[intercept,bedrooms]</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
