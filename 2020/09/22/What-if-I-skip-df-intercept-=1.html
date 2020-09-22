@@ -161,8 +161,8 @@ $$ \hat{y}= b1x+b0 $$
 <div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;intercept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># df is dataframe containing our data</span>
 
 <span class="c1">#performing linear regression</span>
-<span class="n">lm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]])</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">linear_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;intercept&#39;</span><span class="p">,</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">]])</span>  <span class="c1"># y:price, x:[intercept,bedrooms]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -185,7 +185,7 @@ $$ \hat{y}= b1x+b0 $$
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the linear regression model, OLS finds <strong>"weight * predictor"</strong> for each term used in the regression. So, if we skip the intercept variable, which looks like this:</p>
-<div class="highlight"><pre><span></span><span class="n">lm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><span class="n">linear_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bedrooms&#39;</span><span class="p">])</span>  <span class="c1"># y:price, x:bedrooms</span>
 </pre></div>
 <p>then, OLS will see the equation as:</p>
 <p>
